@@ -18,7 +18,7 @@
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![Gemini AI](https://img.shields.io/badge/Gemini_AI-2.0-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://aistudio.google.com/)
+[![OpenRouter](https://img.shields.io/badge/OpenRouter-AI-blueviolet?style=for-the-badge&logo=robot&logoColor=white)](https://openrouter.ai/)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-ccff00?style=for-the-badge)](LICENSE)
 
@@ -55,10 +55,10 @@ Whether you're studying for an exam, learning a new programming language, or pic
 | **Timed** | 10-second SVG countdown ring per question ⏱ |
 
 ### 🤖 AI Card Generator
-- Type any topic and **Google Gemini AI** generates 10 flashcards instantly
+- Type any topic and **OpenRouter AI (Free Models)** generates 10 flashcards instantly
 - Preview generated cards before saving
 - Remove individual cards you don't want
-- Powered by `gemini-2.0-flash-lite` — completely free
+- Powered by `openrouter/free` — completely free
 
 ### ⚡ XP & Level System
 - Earn XP for every correct answer and completed session
@@ -107,7 +107,7 @@ Whether you're studying for an exam, learning a new programming language, or pic
 | **Vite 5** | Build tool and dev server |
 | **Framer Motion** | Page transitions, animations, level-up overlay |
 | **Recharts** | Analytics bar charts |
-| **Google Gemini API** | AI flashcard generation |
+| **OpenRouter API** | AI flashcard generation |
 | **Vanilla CSS** | Custom design system, glassmorphism |
 | **localStorage** | User data persistence (no backend) |
 
@@ -118,7 +118,7 @@ Whether you're studying for an exam, learning a new programming language, or pic
 ### Prerequisites
 - Node.js `v18+`
 - npm `v9+`
-- A free Google Gemini API key from [aistudio.google.com](https://aistudio.google.com)
+- A free OpenRouter API key from [openrouter.ai](https://openrouter.ai)
 
 ### Installation
 
@@ -138,13 +138,13 @@ cp .env.example .env
 
 ### Configure your API key
 
-Open the `.env` file and add your Gemini API key:
+Open the `.env` file and add your OpenRouter API key:
 
 ```env
-VITE_GEMINI_API_KEY=your_actual_api_key_here
+VITE_OPENROUTER_API_KEY=your_actual_api_key_here
 ```
 
-> 🔑 Get your free key at [aistudio.google.com](https://aistudio.google.com) → API Keys → Create Key
+> 🔑 Get your free key at [openrouter.ai](https://openrouter.ai) → Keys → Create Key
 
 ### Run the app
 
@@ -160,7 +160,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `VITE_GEMINI_API_KEY` | Google Gemini API key for AI card generation | ✅ Yes |
+| `VITE_OPENROUTER_API_KEY` | OpenRouter API key for AI card generation | ✅ Yes |
 
 > ⚠️ **Never commit your `.env` file to GitHub.** It is listed in `.gitignore` by default.
 > Only commit `.env.example` which contains placeholder values.
@@ -178,8 +178,8 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 4. Set the **Root Directory** to `flashcard-app`
 
 5. **Add Environment Variable** in the Vercel dashboard:
-   - Name: `VITE_GEMINI_API_KEY`
-   - Value: your actual Gemini API key
+   - Name: `VITE_OPENROUTER_API_KEY`
+   - Value: your actual OpenRouter API key
 
 6. Click **Deploy** 🚀
 
@@ -261,6 +261,6 @@ This project is licensed under the **MIT License** — feel free to use, modify,
 
 **⚡ FlashForge — Learn smarter, not harder.**
 
-*Built with React, powered by Gemini AI, designed with obsidian and lime.*
+*Built with React, powered by OpenRouter AI, designed with obsidian and lime.*
 
 </div>

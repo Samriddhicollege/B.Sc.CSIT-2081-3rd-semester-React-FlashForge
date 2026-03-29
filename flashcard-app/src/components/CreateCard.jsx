@@ -33,14 +33,14 @@ export default function CreateCard({ decks, onCreateDeck, onAddCard, setView }) 
     onAddCard(selDeck, nc); setQ(""); setA(""); setCardErr(""); setOk("✔ Card added!"); setTimeout(() => setOk(""), 2000)
   }
 
-  // ─── GEMINI AI GENERATOR ──────────────────────────────
+  // ─── OPENROUTER AI GENERATOR ──────────────────────────────
   const generateAI = async () => {
     if (!aiTopic.trim()) { setAiErr("Enter a topic first."); return }
     if (!aiDeck) { setAiErr("Select a deck to save cards to."); return }
     
     // 1. Missing API Key Handling
-    const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!GEMINI_API_KEY) {
+    const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
+    if (!apiKey) {
       setAiErr("Missing API key. Please check your .env file.");
       return;
     }
@@ -48,19 +48,38 @@ export default function CreateCard({ decks, onCreateDeck, onAddCard, setView }) 
     setAiLoading(true); setAiErr(""); setAiCards(null); setAiSaved(false);
     
     try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "http://localhost:5173",
+          "X-Title": "Flashcard App"
+        },
         body: JSON.stringify({
-          system_instruction: { parts: { text: "You are a flashcard generator. Return ONLY a valid JSON array of exactly 10 objects, each with \"question\" and \"answer\" string fields. No markdown formatting, no explanation, no backticks. Just the raw JSON array and nothing else." } },
-          contents: [{ parts: [{ text: `Generate 10 flashcards about: ${aiTopic}` }] }]
+          // 'openrouter/free' automatically assigns whatever free models are online!
+          model: "openrouter/free",
+          messages: [
+            {
+              role: "system",
+              content: "You are a flashcard generator. Return ONLY a valid JSON array of exactly 10 objects, each with \"question\" and \"answer\" string fields. No markdown formatting, no explanation, no backticks. Just the raw JSON array and nothing else."
+            },
+            {
+              role: "user",
+              content: `Generate 10 flashcards about: ${aiTopic}`
+            }
+          ],
+          temperature: 0.7,
+          max_tokens: 1500
         })
       });
 
+      // 2. Parse response and handle API Errors (including 404/500 with JSON bodies)
       let data;
       try {
         data = await response.json();
       } catch (err) {
+        // If not JSON, throw standard network error
         throw new Error(`Network Error: ${response.status} ${response.statusText}`);
       }
 
@@ -68,10 +87,11 @@ export default function CreateCard({ decks, onCreateDeck, onAddCard, setView }) 
         throw new Error(`API Error: ${data?.error?.message || response.statusText}`);
       }
       
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+      const text = data.choices?.[0]?.message?.content || "";
       const cleaned = text.replace(/```json|```/gi, "").trim();
       
       let parsed;
+      // 3. Invalid JSON Response Handling
       try {
         parsed = JSON.parse(cleaned);
       } catch (parseError) {
@@ -86,12 +106,14 @@ export default function CreateCard({ decks, onCreateDeck, onAddCard, setView }) 
       
     } catch (e) {
       console.error(e);
+      // Fallback network error handling (e.g., disconnected from internet)
       if (e.message === "Failed to fetch" || e.name === "TypeError") {
         setAiErr("Network failure. Please check your internet connection.");
       } else {
         setAiErr(e.message || "Failed to generate cards.");
       }
     } finally {
+      // 4. Loading State Handling Improvements (Guaranteed to finish loading state)
       setAiLoading(false);
     }
   }
