@@ -88,13 +88,18 @@ export default function CreateCard({ decks, onCreateDeck, onAddCard, setView }) 
       }
       
       const text = data.choices?.[0]?.message?.content || "";
-      const cleaned = text.replace(/```json|```/gi, "").trim();
       
       let parsed;
-      // 3. Invalid JSON Response Handling
+      // 3. Robust JSON Response Extraction
       try {
+        // Extract strictly the JSON array (from '[' to ']') to ignore conversational text 
+        const match = text.match(/\[[\s\S]*\]/);
+        const rawJsonString = match ? match[0] : text;
+        const cleaned = rawJsonString.replace(/```json|```/gi, "").trim();
+        
         parsed = JSON.parse(cleaned);
       } catch (parseError) {
+        console.error("Failed to parse AI response. Raw output:", text);
         throw new Error("Invalid response format received from AI.");
       }
 
