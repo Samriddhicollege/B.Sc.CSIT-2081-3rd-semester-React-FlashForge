@@ -1,94 +1,266 @@
-# ⚡ FlashForge
+<div align="center">
 
-> A premium, dynamic flashcard platform with game modes and AI-powered learning.
+```
+███████╗██╗      █████╗ ███████╗██╗  ██╗███████╗ ██████╗ ██████╗  ██████╗ ███████╗
+██╔════╝██║     ██╔══██╗██╔════╝██║  ██║██╔════╝██╔═══██╗██╔══██╗██╔════╝ ██╔════╝
+█████╗  ██║     ███████║███████╗███████║█████╗  ██║   ██║██████╔╝██║  ███╗█████╗  
+██╔══╝  ██║     ██╔══██║╚════██║██╔══██║██╔══╝  ██║   ██║██╔══██╗██║   ██║██╔══╝  
+██║     ███████╗██║  ██║███████║██║  ██║██║     ╚██████╔╝██║  ██║╚██████╔╝███████╗
+╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+```
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/framer--motion-black.svg?style=for-the-badge&logo=framer&logoColor=blue)
+### ⚡ Master Anything. Faster.
+
+*A premium AI-powered flashcard platform with game modes, XP progression, and real analytics.*
+
+<br/>
+
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Gemini AI](https://img.shields.io/badge/Gemini_AI-2.0-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://aistudio.google.com/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-ccff00?style=for-the-badge)](LICENSE)
+
+<br/>
+
+[🚀 Live Demo](https://your-vercel-link.vercel.app) · [🐛 Report Bug](https://github.com/yourusername/flashforge/issues) · [✨ Request Feature](https://github.com/yourusername/flashforge/issues)
+
+</div>
+
+---
+
+## 📸 Screenshots
+
+> 🖼️ Screenshots coming soon — deploy to Vercel and add them here!
+
+---
+
+## 🧠 What is FlashForge?
+
+FlashForge is a full-featured, gamified flashcard application built with React. It combines the proven science of **active recall** and **spaced repetition** with AI-generated content, game modes, XP progression, and detailed analytics — all wrapped in a stunning **Obsidian & Lime** dark UI.
+
+Whether you're studying for an exam, learning a new programming language, or picking up a new skill — FlashForge makes memorization feel like a game.
+
+---
 
 ## ✨ Features
 
-- **Game Modes**: Learn with Multiple Choice (MCQ), True/False, Survival, and Timed mode.
-- **AI Card Generator**: Automatically create flashcards for any topic using the Google Gemini API.
-- **Progression**: Complete sets to gain XP and level up.
-- **Analytics**: Beautiful dashboard featuring heatmaps and charts.
-- **Authentication**: LocalStorage-based auth to keep track of your profile securely.
-- **Landing Page**: Stunning UI with advanced text animations and a dark "Obsidian & Lime" aesthetic.
+### 🎮 Four Game Modes
+| Mode | Description |
+|------|-------------|
+| **Multiple Choice** | 4 options per question, AI-generated wrong answers |
+| **True / False** | Quick-fire format to test recognition speed |
+| **Survival** | 3 lives — wrong answer costs a heart ❤️ |
+| **Timed** | 10-second SVG countdown ring per question ⏱ |
+
+### 🤖 AI Card Generator
+- Type any topic and **Google Gemini AI** generates 10 flashcards instantly
+- Preview generated cards before saving
+- Remove individual cards you don't want
+- Powered by `gemini-2.0-flash-lite` — completely free
+
+### ⚡ XP & Level System
+- Earn XP for every correct answer and completed session
+- 20 levels from **Novice** all the way to **FlashGod**
+- Animated level-up overlay with confetti particles
+- XP bar always visible in the navbar
+
+### 📊 Analytics Dashboard
+- Bar chart of last 7 study sessions (correct vs wrong)
+- Per-deck accuracy horizontal bars
+- **30-day activity heatmap** (like GitHub contributions)
+- Weak cards list — cards you keep getting wrong, with focused review
+- Total study time tracked and formatted
+
+### 🔐 Authentication
+- Register and login with email and password
+- Data is isolated per user — each account has its own decks, XP, and stats
+- All stored in `localStorage` — no backend required
+- Password hashed with `btoa` salting
+
+### 🎨 Design System
+- **Obsidian & Lime** dark theme (`#ccff00` accent on `#0c0c0c` surfaces)
+- Glassmorphism cards with `blur(16px)` and subtle white overlays
+- 60px grid background + noise texture overlay
+- Animated glow spheres (lime + emerald)
+- `Space Grotesk` headings + `JetBrains Mono` for technical labels
+
+### 🌟 Landing Page
+- Character stagger text animations
+- Word slide-up reveals
+- Scramble text decode effect
+- Count-up statistics
+- Gradient shimmer on brand name
+- Floating glassmorphism flashcard mockup
+- Full bento grid features section
+- Contrast methodology section
+- Professional footer with FLASHFORGE watermark
+
+---
 
 ## 🛠 Tech Stack
 
-- **Framework**: React.js with Vite
-- **Styling**: Vanilla CSS, Flexbox/Grid layouts
-- **Animations**: Framer Motion
-- **AI Integration**: Google Gemini API
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | UI framework with hooks |
+| **Vite 5** | Build tool and dev server |
+| **Framer Motion** | Page transitions, animations, level-up overlay |
+| **Recharts** | Analytics bar charts |
+| **Google Gemini API** | AI flashcard generation |
+| **Vanilla CSS** | Custom design system, glassmorphism |
+| **localStorage** | User data persistence (no backend) |
+
+---
 
 ## 🚀 Getting Started
 
-Follow these steps to run the application locally:
+### Prerequisites
+- Node.js `v18+`
+- npm `v9+`
+- A free Google Gemini API key from [aistudio.google.com](https://aistudio.google.com)
+
+### Installation
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/yourusername/flashforge.git
 
-# 2. Navigate to the project directory
+# 2. Navigate into the project
 cd flashforge/flashcard-app
 
 # 3. Install dependencies
 npm install
 
 # 4. Set up environment variables
-# Copy .env.example to .env and add your API key
 cp .env.example .env
+```
 
-# 5. Start the development server
+### Configure your API key
+
+Open the `.env` file and add your Gemini API key:
+
+```env
+VITE_GEMINI_API_KEY=your_actual_api_key_here
+```
+
+> 🔑 Get your free key at [aistudio.google.com](https://aistudio.google.com) → API Keys → Create Key
+
+### Run the app
+
+```bash
 npm run dev
 ```
 
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
 ## 🔑 Environment Variables
 
-To use the AI Flashcard Generator, you will need a Gemini API Key.
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_GEMINI_API_KEY` | Google Gemini API key for AI card generation | ✅ Yes |
 
-1. Go to [Google AI Studio](https://aistudio.google.com/).
-2. Create standard API credentials and obtain your API key.
-3. In your `.env` file, replace the placeholder with your actual key:
-   \`\`\`
-   VITE_GEMINI_API_KEY=your_gemini_api_key_here
-   \`\`\`
+> ⚠️ **Never commit your `.env` file to GitHub.** It is listed in `.gitignore` by default.
+> Only commit `.env.example` which contains placeholder values.
 
-## 🌍 Deployment
+---
 
-You can deploy this application easily on Vercel:
+## 🌍 Deploying to Vercel
 
-1. Push your code to a GitHub repository. (Make sure `.env` is NOT committed!).
-2. Sign in to [Vercel](https://vercel.com) and click **Add New** > **Project**.
-3. Import your GitHub repository.
-4. **Important Environment Step**: Before deploying, in the "Environment Variables" section on the Vercel dashboard, add:
+1. **Push your code to GitHub** (make sure `.env` is in `.gitignore`)
+
+2. **Go to [vercel.com](https://vercel.com)** and sign in
+
+3. Click **Add New → Project** and import your GitHub repo
+
+4. Set the **Root Directory** to `flashcard-app`
+
+5. **Add Environment Variable** in the Vercel dashboard:
    - Name: `VITE_GEMINI_API_KEY`
-   - Value: `[your-actual-api-key]`
-5. Click **Deploy**.
+   - Value: your actual Gemini API key
+
+6. Click **Deploy** 🚀
+
+---
 
 ## 📁 Project Structure
 
-\`\`\`
-├── public/                # Static assets
-├── src/                   # Source files
-│   ├── components/        # Reusable React components
-│   ├── context/           # React Context providers (Auth, XP)
-│   ├── pages/             # Route pages (Landing, Dashboard, etc.)
-│   ├── App.jsx            # Main app router
-│   ├── App.css            # Global unified styles
-│   └── main.jsx           # App entry point
-├── .env                   # Ignored environment variables
-├── .env.example           # Example environment template
-├── package.json           # Dependencies and scripts
-└── vite.config.js         # Vite configuration
-\`\`\`
+```
+flashcard-app/
+├── public/                  # Static assets
+├── src/
+│   ├── components/          # Reusable React components
+│   │   ├── ui/              # BlurFade, TextAnimations, LevelUpOverlay
+│   │   ├── Dashboard.jsx    # Main dashboard with stats and decks
+│   │   ├── CreateCard.jsx   # Manual + AI card creation
+│   │   ├── ReviewMode.jsx   # All 4 game modes
+│   │   ├── DeckCard.jsx     # Individual deck display
+│   │   ├── FlashCardItem.jsx# Single card with inline edit
+│   │   ├── Navbar.jsx       # Navigation + XP bar + user avatar
+│   │   └── GameModeModal.jsx# Game mode selector
+│   ├── pages/
+│   │   ├── LandingPage.jsx  # Full landing page with animations
+│   │   ├── AuthPages.jsx    # Login and Register pages
+│   │   └── AnalyticsPage.jsx# Charts, heatmap, weak cards
+│   ├── hooks/
+│   │   └── useDebounce.js   # Custom debounce hook
+│   ├── utils/
+│   │   ├── auth.js          # localStorage auth helpers
+│   │   ├── xp.js            # XP levels and thresholds
+│   │   └── helpers.js       # Quotes, greeting, shuffle
+│   ├── App.jsx              # Main router and state
+│   ├── App.css              # Global design system
+│   └── main.jsx             # Entry point
+├── .env                     # ⛔ Not committed (gitignored)
+├── .env.example             # ✅ Committed (placeholder only)
+├── .gitignore               # Git ignore rules
+├── package.json             # Dependencies
+├── vite.config.js           # Vite configuration
+└── README.md                # You are here
+```
 
-## 📸 Screenshots
+---
 
-*Placeholder: Screenshots coming soon!*
+## 🧪 How It Works
+
+```
+User visits landing page
+       ↓
+Register / Login (localStorage auth)
+       ↓
+Create a deck → Add cards manually OR use AI Generator
+       ↓
+Click Review → Choose game mode (MCQ / True-False / Survival / Timed)
+       ↓
+Answer questions → Earn XP → Update confidence per card
+       ↓
+View Analytics → See weak cards → Target focused review
+       ↓
+Level up → Celebrate 🎉
+```
+
+---
+
+## 👨‍💻 Author
+
+Built with ❤️ for learning and growth.
+
+> Replace this section with your own name, GitHub, and LinkedIn links.
+
+---
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License** — feel free to use, modify, and distribute.
+
+---
+
+<div align="center">
+
+**⚡ FlashForge — Learn smarter, not harder.**
+
+*Built with React, powered by Gemini AI, designed with obsidian and lime.*
+
+</div>
