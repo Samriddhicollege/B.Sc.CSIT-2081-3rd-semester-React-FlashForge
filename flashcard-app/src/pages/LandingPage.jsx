@@ -173,19 +173,13 @@ export default function LandingPage({ onLogin, onRegister }) {
             </div>
 
             <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(4rem, 8vw, 7.5rem)", fontWeight: 700, lineHeight: 0.85, letterSpacing: "-0.06em", color: "#ebebeb", marginBottom: 32, textShadow: "0 0 50px rgba(204,255,0,0.05)" }}>
+            <div className="shimmer-text-container" style={{ fontStyle: "italic", marginBottom: 32 }}>
               <div><CharStagger text="Master" delay={0.2} /></div>
-              <div style={{
-                fontStyle: "italic",
-                backgroundImage: "linear-gradient(135deg, #ccff00, #ffffff)",
-                backgroundSize: "200% auto",
-                backgroundPosition: "0% center",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                animation: "text-shimmer 3.2s linear infinite"
-              }}>
+              <div>
                 <CharStagger text="Anything" delay={0.5} />
               </div>
               <div><CharStagger text="Faster." delay={0.9} /></div>
+            </div>
             </div>
 
             <div style={{ fontSize: 18, color: "rgba(235,235,235,0.6)", maxWidth: 520, margin: "0 0 24px 0", lineHeight: 1.5, fontFamily: "'Space Grotesk', sans-serif" }}>
