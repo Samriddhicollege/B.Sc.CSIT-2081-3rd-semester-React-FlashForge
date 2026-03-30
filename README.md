@@ -24,7 +24,7 @@
 
 <br/>
 
-[🚀 Live Demo](https://your-vercel-link.vercel.app) · [🐛 Report Bug](https://github.com/yourusername/flashforge/issues) · [✨ Request Feature](https://github.com/yourusername/flashforge/issues)
+[🚀 Live Demo](https://flashforge-chi.vercel.app/) · [🐛 Report Bug](https://github.com/yourusername/flashforge/issues) · [✨ Request Feature](https://github.com/yourusername/flashforge/issues)
 
 </div>
 
@@ -247,7 +247,8 @@ Level up → Celebrate 🎉
 
 Built with ❤️ for learning and growth.
 
-> Replace this section with your own name, GitHub, and LinkedIn links.
+> https://www.linkedin.com/in/bibek-magar-2aa612340/
+https://github.com/lajusam
 
 ---
 
