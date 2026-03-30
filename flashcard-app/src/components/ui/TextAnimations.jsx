@@ -2,8 +2,18 @@ import { useEffect, useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 
 // 1. Character Stagger — each letter animates in from below with blur
-export function CharStagger({ text, className, delay = 0, stagger = 0.03 }) {
+export function CharStagger({ text, className, delay = 0, stagger = 0.03, shimmer = false }) {
   const chars = text.split("")
+  const shimmerStyle = {
+    backgroundImage: "linear-gradient(135deg, #ccff00, #ffffff)",
+    backgroundSize: "200% auto",
+    backgroundPosition: "0% center",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    animation: "text-shimmer 3.2s linear infinite",
+    padding: "0.2em 0.15em",
+    margin: "-0.2em -0.15em"
+  }
   return (
     <span className={className} style={{ display: "inline-flex", flexWrap: "wrap" }}>
       {chars.map((ch, i) => (
@@ -12,7 +22,11 @@ export function CharStagger({ text, className, delay = 0, stagger = 0.03 }) {
           initial={{ y: 40, opacity: 0, filter: "blur(8px)" }}
           animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
           transition={{ delay: delay + i * stagger, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          style={{ display: "inline-block", whiteSpace: ch === " " ? "pre" : "normal" }}
+          style={{ 
+            display: "inline-block", 
+            whiteSpace: ch === " " ? "pre" : "normal",
+            ...(shimmer ? shimmerStyle : {}) 
+          }}
         >
           {ch === " " ? "\u00A0" : ch}
         </motion.span>
