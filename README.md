@@ -9,6 +9,18 @@
 ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
 ```
 
+
+
+Student Information
+Name: Bibek Magar
+Roll Number: 08
+Course / Program: B.Sc.CSIT 2081
+Semester / Year: 3rd Semester / 2026
+Instructor Information
+Instructor Name: Mr. Dipak Shrestha
+Course Title: React Development
+College Name: Samriddhi College
+
 ### ⚡ Master Anything. Faster.
 
 *A premium AI-powered flashcard platform with game modes, XP progression, and real analytics.*
@@ -30,11 +42,7 @@
 
 ---
 
-## 📸 Screenshots
 
-> 🖼️ Screenshots coming soon — deploy to Vercel and add them here!
-
----
 
 ## 🧠 What is FlashForge?
 
